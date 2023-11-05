@@ -13,10 +13,13 @@ import java.util.function.DoubleBinaryOperator;
 @Controller
 public class WebController {
 
+    private static final String HOME_PAGE = "home";
+    private static final String RESULT_PAGE = "result";
+
     @RequestMapping("/")
     public String home()
     {
-        return "home";
+        return HOME_PAGE;
     }
 
     @PostMapping("/calculate")
@@ -24,6 +27,6 @@ public class WebController {
     {
         final DoubleBinaryOperator expression = (x, y) -> (5 * x * x - y) / Math.exp(x + y);
         model.addAttribute("resultList", RungeKuttaUtils.rungeKutta(form.getX0(), form.getY0(), form.getX(), form.getH(), expression, form.isPrintStacktrace()));
-        return "result";
+        return RESULT_PAGE;
     }
 }

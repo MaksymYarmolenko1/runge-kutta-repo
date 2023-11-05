@@ -1,9 +1,7 @@
 package com.nulp.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-/**
- * @author Ramesh Fadatare
- */
+
 public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class <?> [] getRootConfigClasses() {
