@@ -1,7 +1,6 @@
 package com.nulp.utils.calculation;
 
 import com.nulp.model.RungeKuttaCalculationResult;
-import com.nulp.utils.parser.Parser;
 import com.nulp.utils.parser.Point;
 
 import java.util.ArrayList;
@@ -26,12 +25,6 @@ public class RungeKuttaUtils {
         // Iterate for number of iterations
         for (int i = 1; i <= n; i++)
         {
-//            Apply Runge Kutta Formulas to find next value of y
-//            f1 = eval(function, buildPoint("x", x0), buildPoint("y", y)).getValue();
-//            f2 = eval(function, buildPoint("x", x0 + 0.5 * h), buildPoint("y", y + 0.5 * f1)).getValue();
-//            f3 = eval(function, buildPoint("x", x0 + 0.5 * h), buildPoint("y", y + 0.5 * f2)).getValue();
-//            f4 = eval(function, buildPoint("x", x0 + h), buildPoint("y", y + f3)).getValue();
-
             // Apply Runge Kutta Formulas to find next value of y
             f1 = h * expression.applyAsDouble(x0, y);
             f2 = h * expression.applyAsDouble(x0 + 0.5 * h, y + 0.5 * f1);
